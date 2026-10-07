@@ -162,8 +162,13 @@ svg {
   gap:20px;
   font-size:13px
 }
-.login span {
+.login-arrow {
   color:var(--teal)
+}
+.login-icon {
+  display:none;
+  width:22px;
+  height:22px
 }
 .hero {
   min-height:640px;
@@ -644,6 +649,16 @@ html[lang=ar] body,html[lang=hi] body {
     gap:15px
   }
   .login {
+    display:flex;
+    justify-content:center;
+    flex:0 0 44px;
+    min-height:44px;
+    gap:0
+  }
+  .login-icon {
+    display:block
+  }
+  .login-label,.login-arrow {
     display:none
   }
   .languages summary {
@@ -653,6 +668,10 @@ html[lang=ar] body,html[lang=hi] body {
   .languages summary svg {
     width:17px;
     height:17px
+  }
+  .languages summary svg.chevron {
+    width:10px;
+    height:10px
   }
   .contact-icon svg {
     width:22px
@@ -792,6 +811,13 @@ html[lang=ar] body,html[lang=hi] body {
   .brand img {
     width:116px
   }
+  .languages summary {
+    justify-content:center;
+    width:44px
+  }
+  .languages summary>span,.languages summary .chevron {
+    display:none
+  }
   .hero-actions {
     gap:15px
   }
@@ -831,7 +857,16 @@ html[lang=hi] h1 { letter-spacing:normal; line-height:1.3; }
 html[lang=hi] h1 .headline-bottom { letter-spacing:normal; line-height:1.3; }
 @media(max-width:700px) {
   .secondary-link { min-height:44px; }
-  .header-actions { gap:8px; }
+  .header-actions { gap:4px; flex-shrink:0; }
+  .languages { position:static; }
+  .language-menu,html[dir=rtl] .language-menu {
+    left:auto;
+    right:auto;
+    inset-inline-start:auto;
+    inset-inline-end:0;
+    top:calc(100% - 8px);
+    width:min(296px,100%);
+  }
   .site-footer { padding-bottom:14px; }
 }
 @font-face {
